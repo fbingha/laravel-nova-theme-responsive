@@ -20,14 +20,12 @@ function load() {
     sidebar.classList.toggle("sidebar-hidden");
   }, true);
 
-  // Sidebar links click event
-  var sidebarLinks = document.querySelectorAll('.w-sidebar a');
-  sidebarLinks.forEach(function(sidebarLink) {
-    sidebarLink.addEventListener("click", function(event) {
-      var sidebar = document.querySelector('.w-sidebar');
-      sidebar.classList.add("sidebar-hidden");
-    }, false);
-  });
+
+sidebar.addEventListener("click", function(e) {
+    if (e.target.tagName == 'A') {
+        sidebar.classList.add("sidebar-hidden");
+    }
+});
 
   // Hide sidebar when clicking outside
   var rootElements = document.querySelectorAll('body,html');

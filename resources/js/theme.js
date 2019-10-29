@@ -21,9 +21,9 @@ function load() {
   }, true);
 
   // Sidebar links click event
-  var sidebarLinks = document.querySelectorAll('.w-sidebar a, .w-sidebar .cursor-pointer');
+  var sidebarLinks = document.querySelectorAll('.w-sidebar a');
   sidebarLinks.forEach(function(sidebarLink) {
-    sidebarLink.addEventListener("click", function() {
+    sidebarLink.addEventListener("click", function(event) {
       var sidebar = document.querySelector('.w-sidebar');
       sidebar.classList.add("sidebar-hidden");
     }, false);
